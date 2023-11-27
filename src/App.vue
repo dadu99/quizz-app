@@ -1,5 +1,12 @@
+<script setup>
+  import dataQuiz from "./data/data.json";
+
+
+</script>
+
 <template>
   <div class="container">
+    {{ dataQuiz }}
     <header>
       <h1>Quizes</h1>
       <input type="text" placeholder="Search...">
