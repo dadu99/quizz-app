@@ -1,9 +1,19 @@
 <script setup>
-    import { useRoute, RouterView} from "vue-router";
+    import { useRoute, useRouter, RouterView} from "vue-router";
     import cars from "../data/cars.json";
 
-    const route = useRoute();
-    const car = cars.find(c => c.id === parseInt(route.params.id));
+    const route = useRoute();  //extract information for current path that we are in
+    const router = useRouter();
+
+    const carID = parseInt(route.params.id);
+
+    const car = cars.find(c => c.id === carID);
+
+    const showContact = () => {
+        if(carID === 4) return;
+
+        return router.push(`/cars/${carID}/contact`);
+    }
     
 </script>
 
@@ -13,6 +23,7 @@
         <p>Year: {{ car.year }}</p>
         <p>Price : {{ car.price }}</p>
 
+        <button class="show-contact" @click="showContact">Click for contact</button>
         <RouterView />  
     </div>
 </template>
@@ -26,5 +37,14 @@
     font-size: 19px;
     border: solid;
     width: fit-content;
+}
+.show-contact {
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: none;
+    background-color: #462446;
+    color: white;
 }
 </style>
