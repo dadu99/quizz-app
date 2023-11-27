@@ -18,13 +18,16 @@
 </script>
 
 <template>
-    <div class="car-view">
+    <div class="car-view" v-if="car">
         <h1>Car View : {{ car.name }} </h1>
         <p>Year: {{ car.year }}</p>
         <p>Price : {{ car.price }}</p>
 
         <button class="show-contact" @click="showContact">Click for contact</button>
         <RouterView />  
+    </div>
+    <div v-else>
+        <h1>Car not found!</h1>
     </div>
 </template>
 
