@@ -5,7 +5,6 @@
 
 </script>
 
-
 <template>
     <div class="cars">
         <RouterLink :to="`/cars/${car.id}`" v-for="car in cars" :key="car.id" href="">

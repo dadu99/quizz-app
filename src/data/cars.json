@@ -3,42 +3,70 @@
         "id": 1,
         "name": "Mercedes-Benz",
         "price": 15000,
-        "year": 2015
+        "year": 2015,
+        "contact": {
+            "dealer": "Laith",
+            "number": "5565-561485-844"
+        }
     },
     {
         "id": 2,
         "name": "BMW",
         "price": 45000,
-        "year": 2023
+        "year": 2023,
+        "contact": {
+            "dealer": "Sam",
+            "number": "5565-561485-844"
+        }
     },
     {
         "id": 3,
         "name": "VW",
         "price": 2566,
-        "year": 2004
+        "year": 2004,
+        "contact": {
+            "dealer": "Ghit",
+            "number": "5565-561485-844"
+        }
     },
     {
         "id": 4,
         "name": "Renault",
         "price": 5500,
-        "year": 2010
+        "year": 2010,
+        "contact": {
+            "dealer": "Mary",
+            "number": "5565-561485-844"
+        }
     },
     {
         "id": 5,
         "name": "Toyota",
         "price": 2500,
-        "year": 2019
+        "year": 2019,
+        "contact": {
+            "dealer": "Tom",
+            "number": "5565-561485-844"
+        }
     },
     {
         "id": 6,
         "name": "Dacia",
         "price": 100,
-        "year": 2001
+        "year": 2001,
+        "contact": {
+            "dealer": "Paul",
+            "number": "5565-561485-844"
+        }
     },
     {
         "id": 7,
         "name": "Volvo",
         "price": 99000,
-        "year": 2023
+        "year": 2023,
+        "contact": {
+            "dealer": "Hans",
+            "number": "5565-561485-844"
+        }
     }
 ]
