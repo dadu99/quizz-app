@@ -1,22 +1,29 @@
 <script setup>
   import dataQuiz from "./data/data.json";
+  import {ref, watch} from "vue";
 
+  const quizArr = ref(dataQuiz);
+  const search = ref("");
+
+  watch(search, () => {
+   // console.log("hello from watch");
+   quizArr.value = dataQuiz.filter(quiz => quiz.name.toLowerCase().includes(search.value.toLowerCase()));
+  })
 
 </script>
 
 <template>
   <div class="container">
-    {{ dataQuiz }}
     <header>
       <h1>Quizes</h1>
-      <input type="text" placeholder="Search...">
+      <input v-model.trim="search" type="text" placeholder="Search...">
     </header>
-    <div class="options-container">
+    <div class="options-container" v-for="quiz in quizArr" :key="quiz.id">
       <div class="card">
-        <img src="https://i.ytimg.com/vi/Kp2bYWRQylk/maxresdefault.jpg" alt="">
+        <img :src="quiz.img" alt="Quiz image">
         <div class="card-text">
-          <h2>Math</h2>
-          <p>15 questions</p>
+          <h2>{{quiz.name}}</h2>
+          <p>{{ quiz.questions.length }} questions</p>
         </div>
       </div>
     </div>
@@ -43,40 +50,32 @@
 
   header input {
     border: none;
-    background-color: rgba(128,128,128,0.1);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px;
   }
 
   .options-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: inline-block;
     margin-top: 40px;
   }
-
-  /* CARD */
-
   .card {
     width: 310px;
     overflow: hidden;
-    border-radius: 2%;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
     margin-bottom: 35px;
     margin-right: 20px;
     cursor: pointer;
+    background-color: #ccc;
   }
 
   .card img {
     width: 100%;
     height: 190px;
-    margin: 0
+    margin: 0;
   }
 
   .card .card-text {
-    padding: 0 5px
-  }
-
-  .card .card-text h2 {
-    font-weight: bold;
+    padding: 8px;
+    color:black;
   }
 </style>
