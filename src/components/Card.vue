@@ -3,7 +3,7 @@
 
     const {quiz} = defineProps(['quiz'])
 
-    console.log(quiz);
+   // console.log(quiz);
 </script>
 
 <template>
