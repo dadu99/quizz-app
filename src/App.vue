@@ -1,58 +1,15 @@
 <script setup>
-  import dataQuiz from "./data/data.json";
-  import {ref, watch} from "vue";
-  import Card from "./components/Card.vue";
-
-  const quizArr = ref(dataQuiz);
-  const search = ref("");
-
-  watch(search, () => {
-   // console.log("hello from watch");
-   quizArr.value = dataQuiz.filter(quiz => quiz.name.toLowerCase().includes(search.value.toLowerCase()))
-  })
-
+ 
+  import {RouterView} from "vue-router"
+  import Nav from "./components/Nav.vue"
+ 
 </script>
 
 <template>
-  <div class="container">
-    <header>
-      <h1>Quizes</h1>
-      <input v-model.trim="search" type="text" placeholder="Search...">
-    </header>
-    <div class="options-container">
-      <Card :quiz="quizArr"></Card>
-    </div>
-  </div>
+    <Nav></Nav>
+    <RouterView/>
 </template>
 
 <style scoped>
-  .container {
-    max-width: 1000px;
-    margin: 0 auto
-  }
 
-  header {
-    margin-bottom: 10px;
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-  }
-
-  header h1 {
-    font-weight: bold;
-    margin-right: 30px;
-  }
-
-  header input {
-   
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-  .options-container {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 40px;
-  }
 </style>
