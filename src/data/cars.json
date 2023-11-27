@@ -28,5 +28,17 @@
         "name": "Toyota",
         "price": 2500,
         "year": 2019
+    },
+    {
+        "id": 6,
+        "name": "Dacia",
+        "price": 100,
+        "year": 2001
+    },
+    {
+        "id": 7,
+        "name": "Volvo",
+        "price": 99000,
+        "year": 2023
     }
 ]

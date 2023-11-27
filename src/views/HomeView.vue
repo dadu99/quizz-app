@@ -21,9 +21,14 @@
 }
 .cars a {
     text-decoration: none;
-    color: #333;
-    width: 100%;
+    padding: 50px;
+    width: fit-content;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.388);
     margin: 10px;
+    background-color: #462446;
+    color: white;
+    font-size: 19px;
+    border-radius: 8px;
+    font-weight: 300;
 }
 </style>
