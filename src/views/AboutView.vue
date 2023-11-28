@@ -20,12 +20,26 @@
             <input v-model.trim="search" type="text" placeholder="Search...">
         </header>
         <div class="options-container">
-        <Card :quiz="quizArr"></Card>
+          <TransitionGroup name="card" appear>
+             <Card :quiz="quizArr"></Card>
+          </TransitionGroup>
         </div>
     </div>
 </template>
 
 <style scoped>
+.card-enter-from {
+  transform: translateY(-50px);
+  opacity: 0;
+
+}
+.card-enter-to {
+  transform: translateY(0);
+  opacity: 1;
+}
+.card-enter-active {
+transition: all .4s ease;
+}
  .container {
     max-width: 1000px;
     margin: 0 auto
