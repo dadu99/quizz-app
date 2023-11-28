@@ -22,11 +22,15 @@
  //OR
 // const questionStatus = computed(() => `${currentQuestionIndex.value}/${quiz.questions.length}`); //re-render any particular that we utilize that
 
+ const barPercentage = computed(() => `${currentQuestionIndex.value/quiz.questions.length * 100}%`);
+
 </script>
 
 <template>
     <div>
-        <QuizHeader :questionStatus="questionStatus"></QuizHeader>
+        <QuizHeader :questionStatus="questionStatus" 
+                    :barPercentage="barPercentage">
+        </QuizHeader>
        
         <div class="question-section">
             <Question :question="quiz.questions[currentQuestionIndex]"></Question> 
