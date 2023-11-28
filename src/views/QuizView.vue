@@ -4,6 +4,7 @@
  import {useRoute} from "vue-router";
  import {ref, watch, computed} from "vue";
  import quizez from "../data/data.json";
+ import Result from "../components/Result.vue";
 
  const route = useRoute();
 
@@ -12,6 +13,7 @@
  const quiz = quizez.find(q => q.id === quizID);
  const currentQuestionIndex = ref(0);
  const numberOfCorrectAnswers = ref(0);
+ const showResults = ref(false);
 
  const questionStatus = ref(`${currentQuestionIndex.value}/${quiz.questions.length}`);
 
@@ -30,6 +32,9 @@
         if(isCorrect) {
             numberOfCorrectAnswers.value++;
         }
+        if(quiz.questions.length - 1 === currentQuestionIndex.value) {
+            showResults.value = true;
+        }
         currentQuestionIndex.value++;
     }
 </script>
@@ -41,13 +46,20 @@
         </QuizHeader>
        
         <div class="question-section">
-            <Question :question="quiz.questions[currentQuestionIndex]"
+            <Question  v-if="!showResults"
+                       :question="quiz.questions[currentQuestionIndex]"
                        @selectOption="onOptionSelected">
             </Question> 
+            <Result :quizQuestionLength="quiz.questions.length" 
+                    :numberOfCorrectAnswers="numberOfCorrectAnswers"
+                    v-else />
         </div>
+
+        <!--
         <button @click="currentQuestionIndex++" class="button-current-question">
             Next Question
         </button>
+        -->
     </div>
 </template>
 
