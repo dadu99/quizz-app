@@ -6,6 +6,7 @@ import AboutView from "../views/AboutView.vue";
 import CarView from "../views/CarView.vue";
 import ContactView from "../views/ContactView.vue";
 import NotFoundVue from "../views/404View.vue";
+import QuizView from "../views/QuizView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,9 +21,14 @@ const router = createRouter({
       redirect: "/",
     },
     {
-      path: "/about",
-      name: "about",
+      path: "/cards",
+      name: "cards",
       component: AboutView,
+    },
+    {
+      path: "/card/:id",
+      name: "card",
+      component: QuizView,
     },
     {
       path: "/cars/:id",

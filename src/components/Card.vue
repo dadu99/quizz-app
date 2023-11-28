@@ -1,13 +1,28 @@
 <script setup>
-    import {defineProps} from "vue";
-
-    const {quiz} = defineProps(['quiz'])
-
+    import {defineProps, ref} from "vue";
+    import {useRouter} from "vue-router";
+    
+    const router = useRouter();
+    const {quiz} = defineProps(['quiz']);
+  
    // console.log(quiz);
+
+
+    const navigateToQuiz = (id) => {
+    quiz.forEach(element => {
+     // console.log('elementID =>', element.id);
+      if(id === element.id) {
+        router.push(`/card/${element.id}`);
+      }
+    });
+     
+    }
+
 </script>
 
 <template>
- <div class="card" v-for="q in quiz" :key="q.id" >
+ <div class="card" 
+        v-for="q in quiz" :key="q.id" @click="navigateToQuiz(q.id)">
         <img :src="q.img" alt="Quiz image">
         <div class="card-text">
           <h2>{{q.name}}</h2>

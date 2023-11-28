@@ -7,7 +7,7 @@ import {RouterLink} from "vue-router";
     <header>
         <div class="header-container">
                 <RouterLink active-class="active" to="/" style="text-decoration: none;">Home</RouterLink>
-                <RouterLink active-class="active" to="/about" style="text-decoration: none;">Cards</RouterLink>
+                <RouterLink active-class="active" to="/cards" style="text-decoration: none;">Cards</RouterLink>
         </div>
 
     </header>
