@@ -2,7 +2,7 @@
  import Question from "../components/Question.vue";
  import QuizHeader from "../components/QuizHeader.vue";
  import {useRoute} from "vue-router";
- import {ref, watch} from "vue";
+ import {ref, watch, computed} from "vue";
  import quizez from "../data/data.json";
 
  const route = useRoute();
@@ -18,6 +18,9 @@
    // console.log('current status has changed!!');
     questionStatus.value = `${currentQuestionIndex.value}/${quiz.questions.length}`;
  })
+
+ //OR
+// const questionStatus = computed(() => `${currentQuestionIndex.value}/${quiz.questions.length}`); //re-render any particular that we utilize that
 
 </script>
 
