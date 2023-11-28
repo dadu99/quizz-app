@@ -11,6 +11,7 @@
 
  const quiz = quizez.find(q => q.id === quizID);
  const currentQuestionIndex = ref(0);
+ const numberOfCorrectAnswers = ref(0);
 
  const questionStatus = ref(`${currentQuestionIndex.value}/${quiz.questions.length}`);
 
@@ -18,12 +19,19 @@
    // console.log('current status has changed!!');
     questionStatus.value = `${currentQuestionIndex.value}/${quiz.questions.length}`;
  })
-
  //OR
 // const questionStatus = computed(() => `${currentQuestionIndex.value}/${quiz.questions.length}`); //re-render any particular that we utilize that
 
  const barPercentage = computed(() => `${currentQuestionIndex.value/quiz.questions.length * 100}%`);
 
+
+    const onOptionSelected = (isCorrect) => {
+        console.log("emitted event", isCorrect);
+        if(isCorrect) {
+            numberOfCorrectAnswers.value++;
+        }
+        currentQuestionIndex.value++;
+    }
 </script>
 
 <template>
@@ -33,15 +41,14 @@
         </QuizHeader>
        
         <div class="question-section">
-            <Question :question="quiz.questions[currentQuestionIndex]"></Question> 
+            <Question :question="quiz.questions[currentQuestionIndex]"
+                       @selectOption="onOptionSelected">
+            </Question> 
         </div>
         <button @click="currentQuestionIndex++" class="button-current-question">
             Next Question
         </button>
     </div>
-
-    
-
 </template>
 
 <style scoped>
