@@ -40,7 +40,9 @@
     margin-bottom: 35px;
     margin-right: 20px;
     cursor: pointer;
-    background-color: #ccc;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 17px -3px rgba(0,0,0,0.91); 
+    box-shadow: 0px 0px 17px -3px rgba(0,0,0,0.91);
   }
 
   .card img {

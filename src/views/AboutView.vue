@@ -2,6 +2,7 @@
   import dataQuiz from "../data/data.json";
   import {ref, watch} from "vue";
   import Card from "../components/Card.vue";
+  import gsap from "gsap";
 
   const quizArr = ref(dataQuiz);
   const search = ref("");
@@ -17,8 +18,14 @@
   const beforeEnter = () => {
     console.log('before enter');
   }
-  const enter = () => {
+  const enter = (el) => {
     console.log('enter');
+    gsap.to(el, {
+      y: 0,
+      opacity: 1,
+      duration: .5,
+      delay: el.dataset.index * 0.3,
+    })
   }
 </script>
 
@@ -30,25 +37,24 @@
             <input v-model.trim="search" type="text" placeholder="Search...">
         </header>
         <div class="options-container">
-       <!--
- <TransitionGroup 
-              name="card" 
+      
+          <TransitionGroup 
               appear
               @after-enter="afterEnter"
               @before-enter="beforeEnter"
               @enter="enter">
-         
+              <Card :quiz="quizArr" 
+                    :data-index="index">
+              </Card>
           </TransitionGroup>
-       -->
-         
-          <Card :quiz="quizArr"></Card>
         </div>
     </div>
 </template>
 
 <style scoped>
+/*
 .card-enter-from {
-  transform: translateY(-50px);
+  transform: translateY(-60px);
   opacity: 0;
 
 }
@@ -59,6 +65,8 @@
 .card-enter-active {
 transition: all .4s ease;
 }
+*/
+
  .container {
     max-width: 1000px;
     margin: 0 auto
