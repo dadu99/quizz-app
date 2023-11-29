@@ -15,11 +15,11 @@
 <style scoped>
 .route-enter-from {
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateY(100px);
 }
 .route-enter-to {
   opacity: 1;
-  transform: translateX(100px);
+  transform: translateY(100px);
 }
 .route-enter-active {
   transition: all .4s ease;

@@ -17,7 +17,7 @@
 <style scoped>
 .cars {
     display: flex;
-    transform: translateX(0);
+    transform: translateY(0);
 }
 .cars a {
     text-decoration: none;

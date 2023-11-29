@@ -10,6 +10,16 @@
    // console.log("hello from watch");
    quizArr.value = dataQuiz.filter(quiz => quiz.name.toLowerCase().includes(search.value.toLowerCase()))
   })
+
+  const afterEnter = () => {
+    console.log("after enter");
+  };
+  const beforeEnter = () => {
+    console.log('before enter');
+  }
+  const enter = () => {
+    console.log('enter');
+  }
 </script>
 
 
@@ -20,9 +30,18 @@
             <input v-model.trim="search" type="text" placeholder="Search...">
         </header>
         <div class="options-container">
-          <TransitionGroup name="card" appear>
-             <Card :quiz="quizArr"></Card>
+       <!--
+ <TransitionGroup 
+              name="card" 
+              appear
+              @after-enter="afterEnter"
+              @before-enter="beforeEnter"
+              @enter="enter">
+         
           </TransitionGroup>
+       -->
+         
+          <Card :quiz="quizArr"></Card>
         </div>
     </div>
 </template>
