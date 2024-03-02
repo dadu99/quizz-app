@@ -34,11 +34,11 @@
 <style scoped>
 .car-view {
     padding: 20px;
-    margin-top: 30px;
+    margin: 30px auto;
     border-radius: 8px;
     background-color: #eb6b56;
     font-size: 19px;
-    border: solid;
+    border: 1px solid;
     width: fit-content;
 }
 .show-contact {

@@ -32,4 +32,8 @@
     border-radius: 8px;
     font-weight: 300;
 }
+.cars a:hover {
+    box-shadow: rgba(255, 172, 28, 0.199) -10px 10px, rgba(255, 172, 28, 0.19) -20px 20px ;box-shadow: rgba(255, 172, 28, 0.199) -10px 10px, rgba(255, 172, 28, 0.19) -20px 20px ;
+    transition: 0.3s ease;
+} 
 </style>
