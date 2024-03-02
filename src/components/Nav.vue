@@ -19,6 +19,10 @@ header {
     padding: 20px;
     background-color: #ffc153;
 }
+header a {
+    color: black;
+    font-weight: 300;
+}
 .header-container {
     display: flex;
     gap: 9px;

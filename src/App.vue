@@ -5,7 +5,7 @@
  
 </script>
 
-<template>
+<template class="quiz-app">
     <Nav></Nav>
     <Transition name="route">
         <RouterView/>
