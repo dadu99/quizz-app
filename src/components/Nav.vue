@@ -16,8 +16,8 @@ import {RouterLink} from "vue-router";
 <style scoped>
 header {
     margin-top: 0px!important;
-    padding: 20px;
-    background-color: #ffc153;
+    padding: 30px;
+    background-color: #FEC868;
 }
 header a {
     color: black;
@@ -26,13 +26,13 @@ header a {
 .header-container {
     display: flex;
     gap: 9px;
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 400;
     color: #333;
 }
 
 .active {
     font-weight: 900;
-    color:#47b39d;
+    color:#473C33;
 }
 </style>

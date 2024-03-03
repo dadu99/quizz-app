@@ -68,5 +68,66 @@
             "dealer": "Hans",
             "number": "5565-561485-844"
         }
+    },
+    {
+        "id": 8,
+        "name": "Suzuki",
+        "price": 99000,
+        "year": 2003,
+        "contact": {
+            "dealer": "Hans",
+            "number": "5565-561485-844"
+        }
+    },
+    {
+        "id": 9,
+        "name": "Mitsubishi",
+        "price": 3455,
+        "year": 2016,
+        "contact": {
+            "dealer": "Hans",
+            "number": "5565-561485-844"
+        }
+    },
+    {
+        "id": 10,
+        "name": "Audi",
+        "price": 3455,
+        "year": 2016,
+        "contact": {
+            "dealer": "Hans",
+            "number": "5565-561485-844"
+        }
+    },
+    {
+        "id": 11,
+        "name": "Honda",
+        "price": 3455,
+        "year": 2016,
+        "contact": {
+            "dealer": "Hans",
+            "number": "5565-561485-844"
+        }
+    },
+    {
+        "id": 12,
+        "name": "Rolls Royce",
+        "price": 2223455,
+        "year": 2016,
+        "contact": {
+            "dealer": "Hans",
+            "number": "5565-561485-844"
+        }
+    },
+    {
+        "id": 13,
+        "name": "Midget",
+        "price": 3455,
+        "year": 2016,
+        "contact": {
+            "dealer": "Hans",
+            "number": "5565-561485-844"
+        }
     }
+
 ]
