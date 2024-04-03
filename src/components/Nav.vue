@@ -6,8 +6,8 @@ import {RouterLink} from "vue-router";
 <template>
     <header>
         <div class="header-container">
-                <RouterLink active-class="active" to="/" style="text-decoration: none;">Home</RouterLink>
-                <RouterLink active-class="active" to="/cards" style="text-decoration: none;">Cards</RouterLink>
+                <RouterLink active-class="active" to="/" style="text-decoration: none">Home</RouterLink>
+                <RouterLink active-class="active" to="/cards" style="text-decoration: none">Quiz</RouterLink>
         </div>
 
     </header>
@@ -16,7 +16,7 @@ import {RouterLink} from "vue-router";
 <style scoped>
 header {
     margin-top: 0px!important;
-    padding: 30px;
+    padding: 14px;
     background-color: #FEC868;
 }
 header a {

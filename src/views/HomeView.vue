@@ -1,7 +1,6 @@
 <script setup>
- import cars from "../data/cars.json";
- import{ ref } from "vue";
- import {RouterLink} from "vue-router";
+import cars from "../data/cars.json";
+import {RouterLink} from "vue-router";
 
 </script>
 
